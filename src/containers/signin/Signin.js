@@ -13,10 +13,14 @@ const Signin = props => {
   const [err, setErr] = useState("");
 
   const auth = useSelector(state => state.auth);
-  
+
   const dispatch = useDispatch();
-  
-  useEffect(() => dispatch(isUserLoggedIn(), []));
+
+  useEffect(() => {
+    if (!auth.authenticate) {
+      dispatch(isUserLoggedIn());
+    }
+  }, []);
 
   const handleFormSubmit = e => {
     e.preventDefault();
