@@ -1,3 +1,7 @@
+.app-header {
+  z-index: 1;
+}
+
 h1 {
-    font-size: 30px;
+  font-size: 30px;
 }

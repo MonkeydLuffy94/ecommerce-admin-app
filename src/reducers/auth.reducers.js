@@ -10,10 +10,13 @@ const initialState = {
   },
   authenticate: false,
   authenticating: false,
+  loading: false,
+  error: null,
+  message: "",
 };
 
 const authReducer = (state = initialState, action) => {
-  console.log("action", action);
+  console.log(action);
   let newState;
   switch (action.type) {
     case authConstants.LOGIN_REQUEST:
@@ -23,7 +26,7 @@ const authReducer = (state = initialState, action) => {
         ...action.payload,
       };
       break;
-    case authConstants.LOGIN_SUCCESS:
+    case authConstants.LOGIN_SUCCESS: {
       const { user, token } = action.payload;
       newState = {
         ...state,
@@ -33,7 +36,8 @@ const authReducer = (state = initialState, action) => {
         authenticating: false,
       };
       break;
-    case authConstants.LOGIN_FAILURE:
+    }
+    case authConstants.LOGIN_FAILURE: {
       const { error } = action.payload;
       newState = {
         ...state,
@@ -42,6 +46,28 @@ const authReducer = (state = initialState, action) => {
         error,
       };
       break;
+    }
+    case authConstants.LOGOUT_REQUEST:
+      console.log("token", localStorage.getItem("token"));
+      newState = {
+        ...state,
+        loading: true,
+      };
+      break;
+    case authConstants.LOGOUT_SUCCESS:
+      newState = {
+        ...initialState,
+      };
+      break;
+    case authConstants.LOGOUT_FAILURE: {
+      const { error } = action.payload;
+      newState = {
+        ...state,
+        error,
+        loading: false,
+      };
+      break;
+    }
     default:
       newState = {
         ...state,

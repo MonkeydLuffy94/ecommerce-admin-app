@@ -9,10 +9,11 @@ const InputBox = ({
   errorMessage,
   value,
   onChange,
+  required,
 }) => {
   return (
     <Form.Group controlId={id}>
-      <Form.Label>{label}</Form.Label>
+      <Form.Label>{`${label}${required ? "*" : ""}`}</Form.Label>
       <Form.Control
         type={type}
         placeholder={placeholder}
