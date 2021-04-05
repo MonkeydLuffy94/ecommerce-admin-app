@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Link, Redirect } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Header.css";
 import { signout } from "../../actions";
 
