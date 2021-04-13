@@ -1,25 +1,18 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-const InputBox = ({
+export const InputBox = ({
   id,
   label,
-  type,
-  placeholder,
   errorMessage,
-  value,
-  onChange,
   required,
+  type,
+  ...props
 }) => {
   return (
     <Form.Group controlId={id}>
       <Form.Label>{`${label}${required ? "*" : ""}`}</Form.Label>
-      <Form.Control
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
+      <Form.Control {...props} />
       {errorMessage ? (
         <Form.Text className="text-muted">{errorMessage}</Form.Text>
       ) : null}
@@ -27,4 +20,13 @@ const InputBox = ({
   );
 };
 
-export default InputBox;
+export const FileUpload = ({ errorMessage, ...props }) => {
+  return (
+    <Form.Group>
+      <Form.File {...props} />
+      {errorMessage ? (
+        <Form.Text className="text-muted">{errorMessage}</Form.Text>
+      ) : null}
+    </Form.Group>
+  );
+};

@@ -16,7 +16,8 @@ const initialState = {
 };
 
 const authReducer = (state = initialState, action) => {
-  console.log(action);
+  // console.log("inside auth", action);
+
   let newState;
   switch (action.type) {
     case authConstants.LOGIN_REQUEST:
@@ -48,7 +49,6 @@ const authReducer = (state = initialState, action) => {
       break;
     }
     case authConstants.LOGOUT_REQUEST:
-      console.log("token", localStorage.getItem("token"));
       newState = {
         ...state,
         loading: true,

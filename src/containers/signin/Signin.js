@@ -3,7 +3,7 @@ import Layout from "../../components/layout/Layout";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
-import InputBox from "../../components/ui/input/InputBox";
+import { InputBox } from "../../components/ui";
 import { login } from "../../actions/index";
 import { Redirect } from "react-router-dom";
 

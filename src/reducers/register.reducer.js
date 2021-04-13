@@ -11,7 +11,6 @@ const registerReducer = (state = initalState, action) => {
   switch (action.type) {
 
     case registerConstants.REGISTER_REQUEST:
-    console.log("register request in reducer");
 
       newState = {
         ...state,
@@ -19,7 +18,6 @@ const registerReducer = (state = initalState, action) => {
       };
       break;
     case registerConstants.REGISTER_SUCCESS:
-    console.log("register success in reducer");
 
       const { message } = action.payload;
       newState = {
@@ -29,7 +27,6 @@ const registerReducer = (state = initalState, action) => {
       };
       break;
     case registerConstants.REGISTER_FAILURE:
-    console.log("register failure in reducer");
 
       const { error } = action.payload;
       newState = {

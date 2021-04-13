@@ -11,15 +11,20 @@ const Layout = ({ sidebar, children }) => {
         <Container fluid>
           <Row>
             <Col md={2} className="sidebar">
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/products">Products</NavLink>
-              </li>
-              <li>
-                <NavLink to="/orders">Orders</NavLink>
-              </li>
+              <ul>
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/products">Products</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/orders">Orders</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/category">Category</NavLink>
+                </li>
+              </ul>
             </Col>
             <Col md={10} className="admin-dashboard">
               {children}

@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import InputBox from "../../components/ui/input/InputBox";
+import { InputBox } from "../../components/ui";
 import { register } from "../../actions/index";
 
 const Signup = () => {
